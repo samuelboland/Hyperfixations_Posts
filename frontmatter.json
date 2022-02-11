@@ -4,5 +4,35 @@
         {
             "path": "[[workspace]]/posts"
         }
+    ],
+    "frontMatter.taxonomy.contentTypes": [
+        {
+            "name": "default",
+            "previewPath": null,
+            "pageBundle": false,
+            "fields": [
+                {
+                    "title": "Publishing date",
+                    "name": "date",
+                    "type": "datetime"
+                },
+
+                {
+                    "title": "Is in draft",
+                    "name": "draft",
+                    "type": "draft"
+                },
+                {
+                    "title": "Tags",
+                    "name": "tags",
+                    "type": "tags"
+                },
+                {
+                    "title": "Categories",
+                    "name": "categories",
+                    "type": "categories"
+                }
+            ]
+        }
     ]
 }

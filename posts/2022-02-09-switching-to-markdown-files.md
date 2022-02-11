@@ -1,20 +1,27 @@
 ---
 title: Switching to Markdown Files with Frontmatter CMS
 slug: switching-markdown-files-frontmatter-cms
-description: null
-author: null
+description: 'Follow along as I figure out how to query, fetch, and display markdown content from a Github repo.'
+author: Sam Boland
 date: '2022-02-10T07:45:53.153Z'
-lastmod: '2022-02-10T20:24:41.272Z'
-draft: true
+lastmod: '2022-02-11T21:35:00.902Z'
+draft: false
 tags:
     - vscode
     - CMS
     - frontmatter
-categories: []
+    - React
+    - Next.js
+categories:
+    - Dev Log
 image: /public/Screen Shot 2022-02-09 at 11.54.25 PM.png
 ---
 
 ## Introduction
+
+In this article, I show my how I created a `posts` page that pulls markdown files from a github repository, pulls front matter and content information out of them, and displays them in a nicely formatted way.
+
+I wrote the bulk of this post as I was working on the code, giving a real-time view into my development process.
 
 ### I gave up on Tiptap
 
@@ -28,18 +35,18 @@ Front Matter is a markdown-based content management system (CMS) entirely within
 
 It doesn't have every feature that I want, and it sometimes takes a long time to load the sidebar, but it works well enough for now. And the features that it does have are quite nice!
 
-![Screenshot of the Front Matter CMS in my vscode](images/Screen%20Shot%202022-02-09%20at%2011.54.25%20PM.png)
+![Screenshot of the Front Matter CMS in my vscode](../images/Screen%20Shot%202022-02-09%20at%2011.54.25%20PM.png)
 
-Now that I have a nice Markdown editing environment, I need to source and display my files. To do that, I closely followed [this guide](https://blog.openreplay.com/creating-a-markdown-blog-powered-by-next-js-in-under-an-hour.). 
+Now that I have a nice Markdown editing environment, I need to source and display my files. To do that, I closely followed [this guide](https://blog.openreplay.com/creating-a-markdown-blog-powered-by-next-js-in-under-an-hour.).
 
 My first pass doesn't quite look as good as the images in that post, because I don't use Tailwind css, but the functionality is there.
 
-![Image of my posts index page with partial styling](images/Screen%20Shot%202022-02-10%20at%2010.21.19%20AM.png)
+![Image of my posts index page with partial styling](../images/Screen%20Shot%202022-02-10%20at%2010.21.19%20AM.png)
 
 ### Storing posts on Github in a separate repo
 
-(Note: starting here, I am writing this document as I'm figuring things out. I think that this will lead to more interesting posts. They might be less coherent though. )
-
+**(Note: starting here, I am writing this document as I'm figuring things out. I think that this will lead to more interesting posts. They might be less coherent though. )
+**
 One thing that I did really like about storing my posts in MongoDB was separating the _content_ from the _function_. Big fan of [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) here.
 
 I'm taking inspiration from [Netlify CMS](https://www.netlifycms.org) and storing my posts in a github repo, but a separate one from the application. I plan to get the posts out of github with their API.
@@ -113,7 +120,7 @@ export async function getStaticProps(context) {
 
 That gets us a lot closer! Now I get this error:
 
-![Error page showing that I am trying to render an object as a child of a react component, which is not allowed](images/Screen%20Shot%202022-02-10%20at%2010.57.44%20AM.png)
+![Error page showing that I am trying to render an object as a child of a react component, which is not allowed](../images/Screen%20Shot%202022-02-10%20at%2010.57.44%20AM.png)
 
 So we're getting the right data, it's just that it is in the form of a JSON object. We need to do something to it to display it. The simple approach is to stringify it:
 
@@ -213,7 +220,7 @@ const Test = (props) => {
 
 There we go. That gives me a list of URLs for the raw files. Perfect. I will now take out the test code from the main body of the page and return to the `getStaticProps` part.
 
-### Retrieving the markdown files
+### Retrieving the markdown files from Github
 
 I adjusted my main body to just do a `{console.log(message)}`, and tried just getting a single file at first:
 
@@ -235,6 +242,239 @@ export async function getStaticProps(context) {
 }
 ```
 
-The `.text` part was new to me, since I had previously always worked in JSON. Good to know!
+The `.text` part was new to me, since I had previously always worked in JSON. Good to know! This returns an entire markdown file in my console.log, which is precisely what I wanted.
 
-This returns an entire markdown file in my console.log, which is precisely what I wanted! Now let's see if I can format that file in the main body of my page to look nice. I'm going to use a markdown parser for that, inspired by [this wonderful tutorial](https://blog.openreplay.com/creating-a-markdown-blog-powered-by-next-js-in-under-an-hour), which I also mentioned above. 
+Now I need to map over _all_ urls instead of just one. First, I tried this:
+
+```jsx
+    const articles =
+        urls.map((url) => {
+            const markdown = fetch(url).then((response) => response.text());
+            return markdown;
+        }),
+    ;
+```
+
+This did not work, because it returned promises. I tried adding an `await` before the fetch, but I received a warning that this doesn't do anything.
+
+A quick google search pulled up this useful [Stackoverflow answer](https://stackoverflow.com/a/40140562). I need to wrap the entire function in `await Promise.all()`. That's easy enough:
+
+```jsx
+const articles = await Promise.all(
+    urls.map((url) => {
+        const markdown = fetch(url).then((response) => response.text());
+        return markdown;
+    })
+);
+```
+
+That worked perfectly. My console was now logging an array with 5 text objects in it, each object containing a markdown file. Now to display each of them.
+
+### Extracting title, slug, and content from the markdown files
+
+I'm going to use a markdown parser for this. I am drawing heavy inspiration from [this wonderful tutorial](https://blog.openreplay.com/creating-a-markdown-blog-powered-by-next-js-in-under-an-hour), which I also mentioned above.
+
+I'm using `gray-matter` and `markdown-it`. `Gray-matter` parses the frontmatter in my files (which contains metadata) and `markdown-it` parses the content and converts it to HTML for display.
+
+Let's try adapting this code...I want to:
+
+-   Get the frontmatter as an object
+    -   Extract the title
+    -   Extract the slug
+-   Get the content of the post
+
+This should work:
+
+```jsx
+const data = articles.map((article) => {
+    const { data: frontmatter, content } = matter(article);
+    return { data: frontmatter, content };
+});
+
+return {
+    props: { message: data },
+};
+```
+
+I'm still using a `console.log(message)` in my main page body to query the structure of this data, and it looks like I can get the pieces that I want with:
+
+```jsx
+const title = props.message[0].data.title;
+const slug = props.message[0].data.slug;
+const content = props.message[0].content;
+```
+
+Again I will need to iterate over these, but we're getting very close! I think that the `getStaticProps` is working as I expect. Now let's try displaying each post in a box on the actual page.
+
+### Displaying title, slug, and content on the page
+
+Let's pull out the old reliable `.map` function again, but this time, we need to have it return React elements.
+
+As a small aside: Whenever you use `map` or `foreach` or another method that returns an array, and you want to display that array, React wants you to include a _unique_ `key=` element in the returned JSX. It uses this when manipulating the dom. I don't know the specifics, but it wants it.
+
+We can use the `date` field in the frontmatter for that, since it's down to the...microsecond? What's 3 decimals of a second? `06:34:34.029Z`. Whatever, irrelevant, it will be unique for my use case.
+
+So let's try this:
+
+```jsx
+const Test = (props) => {
+    return (
+        <div>
+            {props.message.map((item) => {
+                const title = item.data.title;
+                const slug = item.data.slug;
+                const date = item.data.date;
+                const content = item.content;
+                return (
+                    <div key={date}>
+                        <h2>{title}</h2>
+                        <div>
+                    </div>
+                );
+            })}
+        </div>
+    );
+};
+```
+
+And that worked! It's ugly, and unformatted, and images aren't loading, but I am displaying my title and my content!
+
+![Image showing title and content displayed without formatting](../images/Screen%20Shot%202022-02-10%20at%201.09.07%20PM.png)
+
+Now for the final piece, let's get some proper markdown parsing so that things like headers and bold test display properly.
+
+I also took the chance to make things look just a little bit nicer, in my opinion. Instead of using `props.message` to map, I put it into a separate variable named `posts`.
+
+```jsx
+const posts = props.message
+return(
+    <div>
+        {posts.map((item) => {
+            ...
+        })}
+)
+```
+
+I also added some sorting. Sorting in Javascript is weird. Take a look at [this page](https://flaviocopes.com/how-to-sort-array-by-date-javascript/) to see what I mean.
+
+I also want my posts to be in reverse chronological order, so I did:
+
+```jsx
+const posts = props.message.sort((a, b) => b.date - a.date).reverse();
+```
+
+The end result looks like this:
+
+```jsx
+const Test = (props) => {
+    const posts = props.message.sort((a, b) => b.date - a.date).reverse();
+
+    return (
+        <div>
+            {posts.map((item) => {
+                const title = item.data.title;
+                const slug = item.data.slug;
+                const date = item.data.date;
+                const content = item.content;
+                return (
+                    <main key={date}>
+                        <h1>{title}</h1>
+                        <h3>{date}</h3>
+                        <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
+                    </main>
+                );
+            })}
+        </div>
+    );
+};
+```
+
+### Some API best practices
+
+I thought that I was done at this point. I naively assumed that my representation of the API was adequate.
+
+There are also some best practices that Github recommends when querying their API, which I learned about when doing research for my next goal, which is to increase my rate limit...limits. It suggests using a header to specify the content type, and passing in your username as the User-Agent. [The documentation can be found here.](https://docs.github.com/en/rest/overview/resources-in-the-rest-api#user-agent-required)
+
+My fetch method now looks like this:
+
+```jsx
+const URL = 'https://api.github.com/repos/samuelboland/Hyperfixations_Posts/contents/posts';
+
+let headers = new Headers({
+    'Accept': 'application/json',
+    'User-Agent': 'samuelboland',
+});
+
+const apiResponse = await fetch(URL, {
+    method: 'GET',
+    headers: headers,
+}).then((response) => response.json());
+```
+
+## Conclusion
+
+To finalize, my code now looks like this:
+
+```jsx
+import matter from 'gray-matter';
+import md from 'markdown-it';
+
+const Test = (props) => {
+    const posts = props.message.sort((a, b) => b.date - a.date).reverse();
+
+    return (
+        <div>
+            {posts.map((item) => {
+                const title = item.data.title;
+                const slug = item.data.slug;
+                const date = item.data.date;
+                const content = item.content;
+                return (
+                    <main key={date}>
+                        <h1>{title}</h1>
+                        <h3>{date}</h3>
+                        <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
+                    </main>
+                );
+            })}
+        </div>
+    );
+};
+
+export async function getStaticProps(context) {
+    const URL = 'https://api.github.com/repos/samuelboland/Hyperfixations_Posts/contents/posts';
+
+    let headers = new Headers({
+        'Accept': 'application/json',
+        'User-Agent': 'samuelboland',
+    });
+
+    const apiResponse = await fetch(URL, {
+        method: 'GET',
+        headers: headers,
+    }).then((response) => response.json());
+
+    const urls = apiResponse.map((item) => item.download_url);
+
+    const articles = await Promise.all(
+        urls.map((url) => {
+            const markdown = fetch(url).then((response) => response.text());
+            return markdown;
+        })
+    );
+    const data = articles.map((article) => {
+        const { data: frontmatter, content } = matter(article);
+        return { data: frontmatter, content };
+    });
+
+    return {
+        props: { message: data },
+    };
+}
+
+export default Test;
+```
+
+There are other things that I plan to do with this, like make the formatting nicer, get images to work, make the date not-ugly, truncate the posts on the index page, have individual links for each post, etc etc.
+
+Enjoy! 

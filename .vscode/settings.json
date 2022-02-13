@@ -1,3 +1,11 @@
 {
-    "frontMatter.dashboard.openOnStart": true
+    "frontMatter.dashboard.openOnStart": true,
+    "frontMatter.content.pageFolders": [
+        {
+            "title": "posts",
+            "path": "[[workspace]]/posts"
+        }
+    ],
+    "frontMatter.framework.id": "next",
+    "frontMatter.content.publicFolder": "public"
 }

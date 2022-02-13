@@ -4,7 +4,7 @@ slug: switching-markdown-files-frontmatter-cms
 description: 'Follow along as I figure out how to query, fetch, and display markdown content from a Github repo.'
 author: Sam Boland
 date: '2022-02-10T07:45:53.153Z'
-lastmod: '2022-02-11T21:35:00.902Z'
+lastmod: '2022-02-13T01:01:33.516Z'
 draft: false
 tags:
     - vscode
@@ -16,6 +16,23 @@ categories:
     - Dev Log
 image: /public/Screen Shot 2022-02-09 at 11.54.25 PM.png
 ---
+
+- [Introduction](#introduction)
+  - [I gave up on Tiptap](#i-gave-up-on-tiptap)
+  - [Enter Front Matter for vscode](#enter-front-matter-for-vscode)
+  - [Storing posts on Github in a separate repo](#storing-posts-on-github-in-a-separate-repo)
+- [Dev Log](#dev-log)
+  - [How will I do this? getStaticProps, probably!](#how-will-i-do-this-getstaticprops-probably)
+  - [Using getStaticProps to get files from a github repository](#using-getstaticprops-to-get-files-from-a-github-repository)
+  - [A brief aside on rate limits](#a-brief-aside-on-rate-limits)
+  - [Structure of the Github api response](#structure-of-the-github-api-response)
+  - [Avoiding rate limits while hacking at things](#avoiding-rate-limits-while-hacking-at-things)
+  - [Creating a list of download_urls](#creating-a-list-of-download_urls)
+  - [Retrieving the markdown files from Github](#retrieving-the-markdown-files-from-github)
+  - [Extracting title, slug, and content from the markdown files](#extracting-title-slug-and-content-from-the-markdown-files)
+  - [Displaying title, slug, and content on the page](#displaying-title-slug-and-content-on-the-page)
+  - [Some API best practices](#some-api-best-practices)
+- [Conclusion](#conclusion)
 
 ## Introduction
 

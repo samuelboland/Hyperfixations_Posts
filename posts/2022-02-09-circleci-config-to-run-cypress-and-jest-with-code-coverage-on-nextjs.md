@@ -4,11 +4,13 @@ slug: circleci-config-cypress-jest-coverage-nextjs
 description: null
 author: null
 date: '2022-02-09T06:45:37.480Z'
-lastmod: '2022-02-10T07:44:51.814Z'
+lastmod: '2022-02-13T01:01:09.962Z'
 draft: false
 tags: []
 categories: []
 ---
+- [Introduction](#introduction)
+- [The Config](#the-config)
 
 ## Introduction
 
@@ -16,7 +18,7 @@ A quick post on my CircleCI config. This config allowed me to generate code cove
 
 ## The Config
 
-The actual file can be found here: https://github.com/samuelboland/Hyperfixations/blob/getCypressWorkingOnCircleCI/.circleci/config.yml
+The actual file can be found here: <https://github.com/samuelboland/Hyperfixations/blob/getCypressWorkingOnCircleCI/.circleci/config.yml>
 
 The key components were solved in previous posts, specifically the esm piece in my last one. Once I got that working, this part just fell together.
 

@@ -4,15 +4,22 @@ slug: coverage-reports-js-istanbul-cypress
 description: null
 author: null
 date: '2022-02-06T06:41:05.410Z'
-lastmod: '2022-02-10T07:45:06.004Z'
+lastmod: '2022-02-13T01:00:47.614Z'
 draft: false
 tags: []
 categories: []
 ---
 
+- [Introduction](#introduction)
+  - [Problem Statement](#problem-statement)
+  - [Writing Plan](#writing-plan)
+  - [Definitions](#definitions)
+- [Code Coverage Reports with Cypress in NextJS](#code-coverage-reports-with-cypress-in-nextjs)
+- [Conclusion](#conclusion)
+
 ## Introduction
 
-Despite being a QA engineer, I don't write any tests at my job. At my current company, our QA work is entirely manual, and has a large operational component. I don't want to go too much into the details here, you can read about it on my company's blog if you care about it: https://engineering.appfolio.com/appfolio-engineering/2021/5/27/quality-assurance-at-appfolio-property-manager-2021
+Despite being a QA engineer, I don't write any tests at my job. At my current company, our QA work is entirely manual, and has a large operational component. I don't want to go too much into the details here, you can read about it on my company's blog if you care about it: <https://engineering.appfolio.com/appfolio-engineering/2021/5/27/quality-assurance-at-appfolio-property-manager-2021>
 
 Despite this, or maybe because of this, I want to learn more automated testing. I haven't been writing tests so far, so I dove in to it over the weekend.
 
@@ -24,17 +31,17 @@ I wanted these tests to be written in Cypress, run on CircleCI, automatically de
 
 I started writing this post and then realized that it's going to get quite long. I'm going to break this up into a few pieces. I'm also not going to specify what the future posts will be right now, since I never know what I'm going to end up writing beforehand. I do, however, plan to cover the following topics:
 
--   Instrumenting my code <-- **you are here**!
--   Generating code coverage reports with Cypress
--   Setting up CircleCI to run these tests automatically
+- Instrumenting my code <-- **you are here**!
+- Generating code coverage reports with Cypress
+- Setting up CircleCI to run these tests automatically
 
-    -   spoilers: it involves setting the `esmExternals` flag to `false` in my `next.config.js`.
+  - spoilers: it involves setting the `esmExternals` flag to `false` in my `next.config.js`.
 
--   Uploading them to Codecov
--   How I tried to use Cypress to test Google-provided OAuth and failed
--   anything else I think of that's relevant
+- Uploading them to Codecov
+- How I tried to use Cypress to test Google-provided OAuth and failed
+- anything else I think of that's relevant
 
-You may notice that I don't intend to cover installing Cypress, or the basics of Cypress tests. That's because it's been done. Not that the other topics haven't, but I'm more interested in talking about them. There are official Next.js docs for Cypress, here: https://nextjs.org/docs/testing#cypress
+You may notice that I don't intend to cover installing Cypress, or the basics of Cypress tests. That's because it's been done. Not that the other topics haven't, but I'm more interested in talking about them. There are official Next.js docs for Cypress, here: <https://nextjs.org/docs/testing#cypress>
 
 And one more thing: I will present this in a logical ordering for the reader. I did not figure this all out in that order. If you are reading this and feel out of your depth, wondering how someone could possibly just figure this out in some logical ordering: I didn't. It was a long and messy process, involving a lot of Google searches, Github issues, and Stack Overflow answers.
 
@@ -58,9 +65,9 @@ By the way, please know that I was figuring out most of this as I went along. I 
 
 ## Code Coverage Reports with Cypress in NextJS
 
-Let's start with something that I can do locally: code coverage reports. You can read more about how this works under the hood at Istanbul's site, here: https://istanbul.js.org/
+Let's start with something that I can do locally: code coverage reports. You can read more about how this works under the hood at Istanbul's site, here: <https://istanbul.js.org/>
 
-The official Cypress docs for this topic are here: https://docs.cypress.io/guides/tooling/code-coverage#Install-the-plugin
+The official Cypress docs for this topic are here: <https://docs.cypress.io/guides/tooling/code-coverage#Install-the-plugin>
 
 Let's install it first:
 

@@ -6,9 +6,16 @@ preview: ''
 draft: ''
 tags: ''
 categories: ''
-lastmod: '2022-02-10T06:49:01.622Z'
+lastmod: '2022-02-13T00:59:42.664Z'
 slug: clearing-tiptap-content-focus
 ---
+- [Introduction](#introduction)
+  - [How to determine whether an element is focused in React](#how-to-determine-whether-an-element-is-focused-in-react)
+  - [Keeping track of focus events with useState()](#keeping-track-of-focus-events-with-usestate)
+  - [Dealing with weird focusing issues on page load](#dealing-with-weird-focusing-issues-on-page-load)
+  - [Displaying text in the Tiptap content box on load](#displaying-text-in-the-tiptap-content-box-on-load)
+
+## Introduction
 
 Like my previous post said, I'm working on setting up a rich text editor on this site to use to write blog posts. I've got it mostly working, but during the process I had a silly idea: How could I get this editor to act like a regular <input> box, at least in terms of how <input> elements can have placeholder text? You can break down that problem into these steps:
 
@@ -17,6 +24,8 @@ Like my previous post said, I'm working on setting up a rich text editor on this
 
     1.  Learn how to determine if the editor is focused
     2.  Keep track of whether the editor is being focused for the first time, or some other time.
+
+### How to determine whether an element is focused in React
 
 Step 2.1 is easy. You can add an `onFocus` tag to any element, like so:
 
@@ -28,10 +37,14 @@ Step 2.1 is easy. You can add an `onFocus` tag to any element, like so:
     />
 ```
 
+### Keeping track of focus events with useState()
+
 Step 2.2 is similarly easy. Modern React has the `useState` hook, which is perfect for this. I instantiated a variable and a setter function to track this like so:
 
+```javascript
     const [hasBeenFocusedAlready, setHasBeenFocusedAlready] =
         useState(false);
+```
 
 You can use this state to determine whether to wipe the content:
 
@@ -46,6 +59,8 @@ You can use this state to determine whether to wipe the content:
 
 That handles all of problem 2! This is enough to clear the content on the first focus event, and no others.
 
+### Dealing with weird focusing issues on page load
+
 During this process, I found that sometimes, the field gets focused randomly during page load. To make sure that the `hasBeenFocusedAlready` variable is set right, I use a `useEffect` hook with an empty dependency array. This just forces it to run once the page has finished rendering, and stuff stops loading.
 
 ```jsx
@@ -54,6 +69,8 @@ useEffect((editor) => {
     setInitialContent('blah');
 }, []);
 ```
+
+### Displaying text in the Tiptap content box on load
 
 Now let's tackle problem 1, **displaying text in the content box on load.** I decided that I wanted to have the ability to pass the desired text as a prop from some other component, so that I can pick what displays in each place that I use this editor.
 

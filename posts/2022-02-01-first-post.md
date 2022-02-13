@@ -4,11 +4,15 @@ slug: post
 description: null
 author: null
 date: '2022-02-01T06:32:56.340Z'
-lastmod: '2022-02-10T07:45:11.447Z'
+lastmod: '2022-02-13T00:59:57.951Z'
 draft: false
 tags: []
 categories: []
 ---
+
+- [My very first post](#my-very-first-post)
+
+## My very first post
 
 I'm writing this from the rich text editor that I just wired up. This is wonderful, I love this! I'm using Tiptap (https://tiptap.dev/) which bills itself as "_The headless editor framework for web artisans."_
 

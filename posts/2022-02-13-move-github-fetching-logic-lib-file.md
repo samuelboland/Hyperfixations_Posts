@@ -4,11 +4,11 @@ slug: move-github-fetching-logic-lib-file
 description: null
 author: null
 date: '2022-02-13T21:05:12.072Z'
-lastmod: '2022-02-14T22:12:20.665Z'
+lastmod: '2022-02-14T22:17:44.154Z'
 draft: true
 tags: []
 categories: []
-pullRequest: null
+pullRequest: 'https://github.com/samuelboland/Hyperfixations/pull/34'
 ---
 
 [TOC GOES HERE]

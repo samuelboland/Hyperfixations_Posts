@@ -4,7 +4,7 @@ slug: authenticating-github-api-requests
 description: null
 author: null
 date: '2022-02-13T02:14:49.902Z'
-lastmod: '2022-02-13T17:35:47.068Z'
+lastmod: '2022-02-14T22:18:30.364Z'
 draft: false
 tags: []
 categories: []
@@ -115,4 +115,4 @@ How is `.map` not a function? Oh! Because I didn't add my Github api key to my C
 
 Let's add that key to the right place.
 
-And it works! 
+And it works!

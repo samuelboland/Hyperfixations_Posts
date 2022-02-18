@@ -1,10 +1,10 @@
 ---
 title: Add Google Analytics
 slug: add-google-analytics
-description: null
+description: In which I make a deal with the devil and add Google analytics to my site
 author: null
 date: '2022-02-13T18:21:37.745Z'
-lastmod: '2022-02-13T21:04:25.516Z'
+lastmod: '2022-02-18T04:21:05.118Z'
 draft: true
 tags: []
 categories: []

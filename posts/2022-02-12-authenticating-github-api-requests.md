@@ -1,10 +1,10 @@
 ---
 title: Authenticating Github API Requests
 slug: authenticating-github-api-requests
-description: null
+description: In which I learn how to authenticate API requests to Github
 author: null
 date: '2022-02-13T02:14:49.902Z'
-lastmod: '2022-02-14T22:18:30.364Z'
+lastmod: '2022-02-18T04:20:43.321Z'
 draft: false
 tags: []
 categories: []

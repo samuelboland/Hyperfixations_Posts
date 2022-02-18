@@ -1,10 +1,10 @@
 ---
 title: Move Github Fetching Logic to lib file
 slug: move-github-fetching-logic-lib-file
-description: null
+description: In which I modularize some code by moving it to a separate file
 author: null
 date: '2022-02-13T21:05:12.072Z'
-lastmod: '2022-02-14T22:29:16.315Z'
+lastmod: '2022-02-18T04:21:20.508Z'
 draft: false
 tags: []
 categories: []

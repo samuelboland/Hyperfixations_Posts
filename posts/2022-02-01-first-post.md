@@ -1,10 +1,10 @@
 ---
 title: First Post
 slug: post
-description: null
+description: 'I am writing this from the rich text editor that I just wired up. This is wonderful, I love this! It uses Tiptap (https://tiptap.dev/) which bills itself as...'
 author: null
 date: '2022-02-01T01:32:56.340Z'
-lastmod: '2022-02-18T04:07:07.852Z'
+lastmod: '2022-02-18T04:19:20.009Z'
 draft: false
 tags: []
 categories: []

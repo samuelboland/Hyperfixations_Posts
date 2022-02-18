@@ -1,10 +1,10 @@
 ---
 title: Resolving remote images in markdown posts
 slug: resolving-remote-images-markdown-posts
-description: null
+description: 'My posts are nearly complete, but there''s still a few pieces missing. One of them is the ability to show images!'
 author: null
 date: '2022-02-17T17:51:42.664Z'
-lastmod: '2022-02-18T02:55:21.019Z'
+lastmod: '2022-02-18T04:22:15.852Z'
 draft: true
 tags: []
 categories: []
@@ -21,6 +21,7 @@ pullRequest: null
     - [Replacing Markdown-it with remark and remark-html](#replacing-markdown-it-with-remark-and-remark-html)
     - [Replacing dangerouslySetInnerHtml with ReactMarkdown](#replacing-dangerouslysetinnerhtml-with-reactmarkdown)
 - [Wrapping up](#wrapping-up)
+  - [Found a bug in testing](#found-a-bug-in-testing)
 
 ## Introduction
 
@@ -221,3 +222,41 @@ I would suggest reading that site for an explanation, as it explains it better t
 ## Wrapping up
 
 While I was at it, I also adjusted the posts index page so that it only shows the titles and timestamps of each post, rather than the entire thing. The titles link to the posts.
+
+### Found a bug in testing
+
+It's a very good thing that I have Cypress tests, because they fond a bug! If I attempted to open a post *without* an image, it failed!
+
+If the image processing logic triggered when there wasn't an image, it would break.
+
+I'm tired of this, so I ended up just tossing it into a big old try/catch statement. It is not nice. But it works! Here's the final method I'm using to find images. It's quite unsatisfying, but it's functional.
+
+```js
+const findImages = (post) => {
+    // Check if file contains an image. If so, extract the base filename of the image,
+    // remove the local folder structure, and prepend the fixed repository url to it.
+    // Then, replace all instances of the original with the newly created url.
+
+    // Added a try/catch statement because it was triggering whenever the string "png" was present,
+    // obviously, so it would sometimes trigger when there wasn't an image to process.
+    // This made it mad.
+    // This is a gross way to handle this lmao.
+    try {
+        if (post.includes('.png')) {
+            console.log(post);
+            const allPngFilesBetweenParens = /\(([^)]+png)\)/g;
+            const baseUrl =
+                '(https://github.com/samuelboland/Hyperfixations_Posts/raw/main/images/';
+            const images = post.match(allPngFilesBetweenParens);
+            images.map((image) => {
+                const baseImage = image.split('/')[2];
+                post = post.replace(image, baseUrl + baseImage);
+            });
+            return post;
+        }
+    } catch (err) {
+        return post;
+    }
+    return post;
+};
+```

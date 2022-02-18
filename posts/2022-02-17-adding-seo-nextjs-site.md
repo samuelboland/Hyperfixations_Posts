@@ -1,10 +1,10 @@
 ---
 title: 'Adding next-seo to my Nextjs site '
 slug: adding-seo-nextjs-site
-description: null
+description: 'If you want people to be able to find your content in a search, you need to make it as easy as possible for search engines to index your site.'
 author: null
 date: '2022-02-17T17:20:32.331Z'
-lastmod: '2022-02-17T17:49:32.426Z'
+lastmod: '2022-02-18T04:21:49.394Z'
 draft: true
 tags: []
 categories: []

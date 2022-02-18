@@ -1,10 +1,10 @@
 ---
 title: CircleCI Config for Cypress and Jest with Coverage on NextJS
 slug: circleci-config-cypress-jest-coverage-nextjs
-description: null
+description: 'A quick post on my CircleCI config. This config allowed me to generate code coverage for Jest and Cypress and upload that coverage to Codecov from CircleCI. '
 author: null
 date: '2022-02-09T06:45:37.480Z'
-lastmod: '2022-02-13T01:01:09.962Z'
+lastmod: '2022-02-18T04:20:16.445Z'
 draft: false
 tags: []
 categories: []

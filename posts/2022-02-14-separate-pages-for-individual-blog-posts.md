@@ -1,10 +1,10 @@
 ---
 title: Separate pages for individual blog posts
 slug: separate-pages-individual-blog-posts
-description: null
+description: I want a way for users to click on the title of the blog post and be taken to a page that only shows that post.
 author: null
 date: '2022-02-14T22:30:16.825Z'
-lastmod: '2022-02-17T03:24:07.701Z'
+lastmod: '2022-02-18T04:21:36.149Z'
 draft: false
 tags:
     - posts

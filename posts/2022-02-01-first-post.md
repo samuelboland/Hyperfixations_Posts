@@ -3,8 +3,8 @@ title: First Post
 slug: post
 description: null
 author: null
-date: '2022-02-01T06:32:56.340Z'
-lastmod: '2022-02-13T00:59:57.951Z'
+date: '2022-02-01T01:32:56.340Z'
+lastmod: '2022-02-18T04:07:07.852Z'
 draft: false
 tags: []
 categories: []

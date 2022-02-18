@@ -4,14 +4,20 @@ slug: adding-seo-nextjs-site
 description: 'If you want people to be able to find your content in a search, you need to make it as easy as possible for search engines to index your site.'
 author: null
 date: '2022-02-17T17:20:32.331Z'
-lastmod: '2022-02-18T04:21:49.394Z'
+lastmod: '2022-02-18T04:30:31.215Z'
 draft: true
 tags: []
 categories: []
 pullRequest: null
 ---
 
-[TOC GOES HERE]
+- [Introduction](#introduction)
+  - [Next-seo](#next-seo)
+  - [Google Search Console](#google-search-console)
+- [Dev Log](#dev-log)
+  - [Next SEO](#next-seo-1)
+    - [Next-SEO site-wide configuration](#next-seo-site-wide-configuration)
+    - [Generating a sitemap](#generating-a-sitemap)
 
 ## Introduction
 

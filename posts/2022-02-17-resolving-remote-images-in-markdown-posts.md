@@ -4,7 +4,7 @@ slug: resolving-remote-images-markdown-posts
 description: 'My posts are nearly complete, but there''s still a few pieces missing. One of them is the ability to show images!'
 author: null
 date: '2022-02-17T17:51:42.664Z'
-lastmod: '2022-02-18T04:22:15.852Z'
+lastmod: '2022-02-18T04:43:33.592Z'
 draft: true
 tags: []
 categories: []
@@ -116,6 +116,8 @@ Hmm, nope. No size information. Some ideas:
 - Perhaps I could download it in the API call and then get the image information from there? If I did that, I could just serve the image locally...but idk if that's possible.
 - Look online to see if someone knows how to get image size info from Github
 - Look online to see if there are any other solutions
+
+Let's go with choice three.
 
 #### Using the Remark Ecosystem to render images in markdown in Nextjs
 

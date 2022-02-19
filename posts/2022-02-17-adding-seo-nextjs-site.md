@@ -1,10 +1,10 @@
 ---
-title: 'Adding next-seo to my Nextjs site '
+title: Adding next-seo to my Nextjs site
 slug: adding-seo-nextjs-site
 description: 'If you want people to be able to find your content in a search, you need to make it as easy as possible for search engines to index your site.'
 author: null
 date: '2022-02-17T17:20:32.331Z'
-lastmod: '2022-02-18T04:30:31.215Z'
+lastmod: '2022-02-19T17:59:53.038Z'
 draft: true
 tags: []
 categories: []
@@ -17,7 +17,8 @@ pullRequest: null
 - [Dev Log](#dev-log)
   - [Next SEO](#next-seo-1)
     - [Next-SEO site-wide configuration](#next-seo-site-wide-configuration)
-    - [Generating a sitemap](#generating-a-sitemap)
+  - [Page-specific SEO](#page-specific-seo)
+  - [CircleCI build difficulties](#circleci-build-difficulties)
 
 ## Introduction
 
@@ -75,4 +76,58 @@ Here's what I've added to my `_app.js`:
 
 "[OpenGraph](https://ogp.me/)" is a protocol that "enabled any web page to become a rich object in a social graph." Not gonna lie, I haven't looked too deeply into this. I'm just gonna roll with this suggested configuration.
 
-#### Generating a sitemap
+### Page-specific SEO
+
+For my `[posts]` route, I can use some of the information present in the post frontmatter, which is nice! Here's what I did:
+
+```js
+<NextSeo
+     title={props.data.data.title}
+     description="Approximate knowledge of many things"
+     canonical={canonicalUrl}
+     openGraph={{
+         url: 'https://hyperfixatons.io/',
+         title: 'Hyperfixations',
+         description:
+             'Follow along as I create and document the process of building a blog with Next.js! Once complete, I will use this to document my various hobby fixations as they come and go.',
+         site_name: 'Hyperfixations',
+     }}
+     twitter={{
+         handle: '@SamCBoland',
+         cardType: 'summary_large_image',
+     }}
+ />
+```
+
+The title and URL are automatically generated. I created a function, `canonicalUrl`, like so:
+
+```js
+    const router = useRouter();
+    const canonicalUrl = 'http://hyperfixations.io' + router.asPath;
+```
+
+Remember to `import { useRouter } from 'next/router'` at the top of the file.
+
+The `posts` index page is similar, just without the automatically generated title.
+
+### CircleCI build difficulties
+
+I'm having some issues when trying to build the app on CircleCI:
+
+```js
+/root/project/node_modules/next-seo/lib/next-seo.js:215
+  if (config.openGraph?.title || updatedTitle) {
+                       ^
+
+SyntaxError: Unexpected token '.'
+```
+
+This isn't my code, this is in next-seo itself.
+
+My google searches have not garnered much information. It seems like this issue is affecting other people, and is recent. [This reddit thread](https://www.reddit.com/r/nextjs/comments/slw4p6/nextseo_causes_a_crash_in_dev_mode/) from 12 days ago has a comment, posted 8 days ago, that mentions downgrading Next Seo to 4.28.1. I might give that a shot.
+
+My current version is 5.1.0.
+
+Huh, that fixed it.
+
+Time to merge! Let's get some SEO going. :D

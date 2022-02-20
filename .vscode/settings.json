@@ -7,5 +7,6 @@
         }
     ],
     "frontMatter.framework.id": "next",
-    "frontMatter.content.publicFolder": "public"
+    "frontMatter.content.publicFolder": "public",
+    "frontMatter.content.autoUpdateDate": false
 }

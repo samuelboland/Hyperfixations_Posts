@@ -2,12 +2,10 @@
 title: Authenticating Github API Requests
 slug: authenticating-github-api-requests
 description: In which I learn how to authenticate API requests to Github
-author: null
+author: Sam Boland
 date: '2022-02-13T02:14:49.902Z'
-lastmod: '2022-02-18T04:20:43.321Z'
-draft: false
 tags: []
-categories: []
+pullRequest: https://github.com/samuelboland/Hyperfixations/pull/30
 ---
 
 - [Introduction](#introduction)

@@ -2,12 +2,10 @@
 title: Running Cypress on CircleCI and Next.js
 slug: running-cypress-circleci-js
 description: 'In my previous post, I explained how I got `Istanbul` to instrument my code, and `Cypress` to create coverage reports when it runs.'
-author: null
+author: Sam Boland
 date: '2022-02-07T06:44:31.961Z'
-lastmod: '2022-02-18T04:20:02.424Z'
-draft: false
 tags: []
-categories: []
+pullRequest: https://github.com/samuelboland/Hyperfixations/pull/16
 ---
 - [Introduction](#introduction)
 - [esmExternals](#esmexternals)

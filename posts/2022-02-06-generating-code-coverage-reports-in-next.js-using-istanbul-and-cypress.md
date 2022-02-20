@@ -2,12 +2,10 @@
 title: Coverage reports in Next.js with Istanbul and Cypress
 slug: coverage-reports-js-istanbul-cypress
 description: 'Despite being a QA engineer, I don''t write any tests at my job. At my current company, our QA work is entirely manual, and has a large operational component.'
-author: null
+author: Sam Boland
 date: '2022-02-06T06:41:05.410Z'
-lastmod: '2022-02-18T04:19:31.607Z'
-draft: false
 tags: []
-categories: []
+pullRequest: None
 ---
 
 - [Introduction](#introduction)

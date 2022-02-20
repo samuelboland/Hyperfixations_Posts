@@ -4,17 +4,13 @@ slug: switching-markdown-files-frontmatter-cms
 description: 'Follow along as I figure out how to query, fetch, and display markdown content from a Github repo.'
 author: Sam Boland
 date: '2022-02-10T07:45:53.153Z'
-lastmod: '2022-02-13T01:01:33.516Z'
-draft: false
 tags:
     - vscode
     - CMS
     - frontmatter
     - React
     - Next.js
-categories:
-    - Dev Log
-image: /public/Screen Shot 2022-02-09 at 11.54.25 PM.png
+pullRequest: https://github.com/samuelboland/Hyperfixations/pull/24
 ---
 
 - [Introduction](#introduction)

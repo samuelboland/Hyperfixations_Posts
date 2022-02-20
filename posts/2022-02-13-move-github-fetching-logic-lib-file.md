@@ -2,12 +2,9 @@
 title: Move Github Fetching Logic to lib file
 slug: move-github-fetching-logic-lib-file
 description: In which I modularize some code by moving it to a separate file
-author: null
+author: Sam Boland
 date: '2022-02-13T21:05:12.072Z'
-lastmod: '2022-02-18T04:21:20.508Z'
-draft: false
 tags: []
-categories: []
 pullRequest: 'https://github.com/samuelboland/Hyperfixations/pull/34'
 ---
 

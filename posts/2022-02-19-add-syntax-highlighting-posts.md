@@ -1,14 +1,11 @@
 ---
 title: Add syntax highlighting to posts
 slug: add-syntax-highlighting-posts
-description: null
-author: null
+description: I want syntax highlighting in my posts, because plain code blocks are hard to read. 
+author: Sam Boland
 date: '2022-02-19T17:59:17.838Z'
-lastmod: '2022-02-20T20:17:28.360Z'
-draft: true
 tags: []
-categories: []
-pullRequest: null
+pullRequest: https://github.com/samuelboland/Hyperfixations/pull/42
 ---
 
 - [Explanation](#explanation)

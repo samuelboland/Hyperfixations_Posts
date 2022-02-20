@@ -2,16 +2,13 @@
 title: Separate pages for individual blog posts
 slug: separate-pages-individual-blog-posts
 description: I want a way for users to click on the title of the blog post and be taken to a page that only shows that post.
-author: null
+author: Sam Boland
 date: '2022-02-14T22:30:16.825Z'
-lastmod: '2022-02-18T04:21:36.149Z'
-draft: false
 tags:
     - posts
     - github
     - api
     - promise
-categories: []
 pullRequest: '(https://github.com/samuelboland/Hyperfixations/pull/37)'
 ---
 

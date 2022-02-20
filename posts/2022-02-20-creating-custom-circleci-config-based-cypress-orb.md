@@ -1,17 +1,16 @@
 ---
 title: Creating a Custom CircleCI Config based on the Cypress Orb
 slug: creating-custom-circleci-config-based-cypress-orb
-description: null
-author: null
+description: 'I redid my circleci config by using parts from the cypress orb. I reduced my build time from 2m45s to 1m 13s, a 55.7% reduction. More than I thought I''d get.'
+author: Sam Boland
 date: '2022-02-20T20:17:21.716Z'
-lastmod: '2022-02-20T21:45:07.068Z'
-draft: true
+lastmod: '2022-02-20T21:50:46.776Z'
 tags: []
-categories: []
-pullRequest: null
+pullRequest: 'https://github.com/samuelboland/Hyperfixations/pull/46'
 ---
 
 - [Explanation](#explanation)
+  - [TL;DR](#tldr)
 - [Dev Log](#dev-log)
   - [Extracting the Cypress/Install command](#extracting-the-cypressinstall-command)
     - [Step-by-step](#step-by-step)
@@ -63,6 +62,9 @@ workflows:
 
 It works, but I want to make it better.
 
+### TL;DR
+
+I redid my circleci config by using parts from the cypress orb. I reduced my build time from 2m45s to 1m 13s, a 55.7% reduction. More than I thought I'd get.
 ## Dev Log
 
 To fix this, I'm going to build my own custom config. In my previous post, I explained how I altered the CircleCI Orb to run the Cache step after the build step, and to also cache the `.next/cache` folder. I could further alter the orb, but instead, I would rather use it as inspiration and get rid of the code paths that I don't require.

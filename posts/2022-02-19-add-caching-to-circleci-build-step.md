@@ -1,14 +1,12 @@
 ---
 title: Add caching to CircleCI Build Step
 slug: add-caching-circleci-build-step
-description: null
-author: null
+description: Editing the official Cypress circleci orb for my use case
+author: Sam Boland
 date: '2022-02-19T19:22:03.630Z'
-lastmod: '2022-02-20T20:17:40.105Z'
-draft: true
 tags: []
 categories: []
-pullRequest: null
+pullRequest: https://github.com/samuelboland/Hyperfixations/pull/45
 ---
 
 - [Explanation](#explanation)

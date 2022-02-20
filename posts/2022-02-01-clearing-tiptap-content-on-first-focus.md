@@ -3,11 +3,9 @@ title: Clearing Tiptap Content on First Focus
 description: 'Like my previous post said, I'
 'm working on setting up a rich text editor on this site to use to write blog posts. I have it mostly working, but during the process I had a silly idea''': 'How could I get this editor to act like a regular <input> box, at least in terms of how <input> elements can have placeholder text? You can break down that problem into these steps:'''
 date: '2022-02-01T06:34:35.029Z'
-draft: 'false'
 tags: ''
-categories: ''
-lastmod: '2022-02-18T04:17:50.693Z'
 slug: clearing-tiptap-content-focus
+pullRequest: None
 ---
 - [Introduction](#introduction)
   - [How to determine whether an element is focused in React](#how-to-determine-whether-an-element-is-focused-in-react)

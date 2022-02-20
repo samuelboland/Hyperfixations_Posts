@@ -2,13 +2,10 @@
 title: Resolving remote images in markdown posts
 slug: resolving-remote-images-markdown-posts
 description: 'My posts are nearly complete, but there''s still a few pieces missing. One of them is the ability to show images!'
-author: null
+author: Sam Boland
 date: '2022-02-17T17:51:42.664Z'
-lastmod: '2022-02-18T04:43:33.592Z'
-draft: true
 tags: []
-categories: []
-pullRequest: null
+pullRequest: https://github.com/samuelboland/Hyperfixations/pull/40
 ---
 
 - [Introduction](#introduction)

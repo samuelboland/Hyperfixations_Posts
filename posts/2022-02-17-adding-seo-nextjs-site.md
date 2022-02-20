@@ -2,13 +2,10 @@
 title: Adding next-seo to my Nextjs site
 slug: adding-seo-nextjs-site
 description: 'If you want people to be able to find your content in a search, you need to make it as easy as possible for search engines to index your site.'
-author: null
+author: Sam Boland
 date: '2022-02-17T17:20:32.331Z'
-lastmod: '2022-02-19T17:59:53.038Z'
-draft: true
 tags: []
-categories: []
-pullRequest: null
+pullRequest: https://github.com/samuelboland/Hyperfixations/pull/41
 ---
 
 - [Introduction](#introduction)

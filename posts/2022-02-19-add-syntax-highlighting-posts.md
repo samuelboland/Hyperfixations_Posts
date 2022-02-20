@@ -4,14 +4,15 @@ slug: add-syntax-highlighting-posts
 description: null
 author: null
 date: '2022-02-19T17:59:17.838Z'
-lastmod: '2022-02-19T18:16:46.347Z'
+lastmod: '2022-02-19T19:19:26.411Z'
 draft: true
 tags: []
 categories: []
 pullRequest: null
 ---
 
-[TOC GOES HERE]
+- [Explanation](#explanation)
+- [Dev Log](#dev-log)
 
 ## Explanation
 

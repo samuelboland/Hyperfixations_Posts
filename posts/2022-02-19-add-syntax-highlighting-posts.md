@@ -4,7 +4,7 @@ slug: add-syntax-highlighting-posts
 description: null
 author: null
 date: '2022-02-19T17:59:17.838Z'
-lastmod: '2022-02-19T19:19:26.411Z'
+lastmod: '2022-02-20T20:17:28.360Z'
 draft: true
 tags: []
 categories: []

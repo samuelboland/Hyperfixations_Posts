@@ -4,14 +4,23 @@ slug: add-caching-circleci-build-step
 description: null
 author: null
 date: '2022-02-19T19:22:03.630Z'
-lastmod: '2022-02-20T01:58:05.708Z'
+lastmod: '2022-02-20T20:17:40.105Z'
 draft: true
 tags: []
 categories: []
 pullRequest: null
 ---
 
-[TOC GOES HERE]
+- [Explanation](#explanation)
+- [Dev Log](#dev-log)
+  - [Refactoring CircleCI Config](#refactoring-circleci-config)
+  - [Wait, let's go another direction](#wait-lets-go-another-direction)
+    - [Breaking down the CircleCI Orb, starting with the Jobs](#breaking-down-the-circleci-orb-starting-with-the-jobs)
+    - [Finding the `install` command](#finding-the-install-command)
+    - [Breaking down the `setup` job](#breaking-down-the-setup-job)
+    - [Adding it as a post-step](#adding-it-as-a-post-step)
+  - [Figuring out why `.next/cache` is not present in circleCI](#figuring-out-why-nextcache-is-not-present-in-circleci)
+- [Conclusion](#conclusion)
 
 ## Explanation
 

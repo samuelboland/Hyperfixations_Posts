@@ -8,14 +8,7 @@ tags: []
 pullRequest: https://github.com/samuelboland/Hyperfixations/pull/41
 ---
 
-- [Introduction](#introduction)
-  - [Next-seo](#next-seo)
-  - [Google Search Console](#google-search-console)
-- [Dev Log](#dev-log)
-  - [Next SEO](#next-seo-1)
-    - [Next-SEO site-wide configuration](#next-seo-site-wide-configuration)
-  - [Page-specific SEO](#page-specific-seo)
-  - [CircleCI build difficulties](#circleci-build-difficulties)
+## Table of contents
 
 ## Introduction
 

@@ -8,22 +8,8 @@ tags: []
 pullRequest: https://github.com/samuelboland/Hyperfixations/pull/31
 ---
 
-- [Introduction](#introduction)
-  - [Ethical Reservations](#ethical-reservations)
-  - [What is Google Analytics?](#what-is-google-analytics)
-- [Dev Log](#dev-log)
-  - [Initial Research](#initial-research)
-  - [Wait a minute - this is a Single Page Application](#wait-a-minute---this-is-a-single-page-application)
-  - [Informing Google Analytics when I change pages in Nextjs](#informing-google-analytics-when-i-change-pages-in-nextjs)
-    - [A brief aside on useEffect()](#a-brief-aside-on-useeffect)
-    - [Informing Google Analytics of a page change with a useEffect() hook](#informing-google-analytics-of-a-page-change-with-a-useeffect-hook)
-    - [Injecting the Google Analytics Script into my Nextjs app](#injecting-the-google-analytics-script-into-my-nextjs-app)
-  - [Testing Google Analytics integration](#testing-google-analytics-integration)
-    - [Troubleshooting the missing ID](#troubleshooting-the-missing-id)
-- [Dev Log 2 - starting over](#dev-log-2---starting-over)
-  - [Attempt Number Two](#attempt-number-two)
-    - [Extracting the gtag function to a library](#extracting-the-gtag-function-to-a-library)
-- [CI and Deployment](#ci-and-deployment)
+  
+## Table of contents
 
 ## Introduction
 

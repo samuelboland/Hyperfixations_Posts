@@ -1,12 +1,14 @@
 ---
 title: 'Styling my Next.js application with Tailwind CSS, Part 2'
 slug: styling-js-application-tailwind-css-part-2
-description: null
+description: Implementing a header, footer, and a navbar dropdown menu with Tailwind and DaisyUI
 author: Sam Boland
 date: '2022-02-21T23:33:44.387Z'
 tags: []
 pullRequest: https://github.com/samuelboland/Hyperfixations/pull/52
 ---
+
+## Table of contents
 
 ## Introduction
 

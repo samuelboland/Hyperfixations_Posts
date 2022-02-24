@@ -12,13 +12,7 @@ tags:
 pullRequest: '(https://github.com/samuelboland/Hyperfixations/pull/37)'
 ---
 
-- [Introduction](#introduction)
-- [Explaining dynamic routes in Nextjs](#explaining-dynamic-routes-in-nextjs)
-  - [How does it know what to generate beforehand? With getStaticProps](#how-does-it-know-what-to-generate-beforehand-with-getstaticprops)
-- [Dev Log](#dev-log)
-  - [Populating all possible routes with getStaticPaths](#populating-all-possible-routes-with-getstaticpaths)
-  - [Update: This is annoying](#update-this-is-annoying)
-  - [Update 2: I FIGURED IT OUT](#update-2-i-figured-it-out)
+## Table of contents
 
 ## Introduction
 

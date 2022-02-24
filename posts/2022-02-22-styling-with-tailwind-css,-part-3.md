@@ -1,12 +1,14 @@
 ---
 title: 'Styling with Tailwind CSS, Part 3'
 slug: styling-tailwind-css-part-3
-description: null
+description: Implementing a theme picker with DaisyUI and Next-theme. Surprisingly simple!
 author: Sam Boland
 date: '2022-02-23T05:35:51.782Z'
 tags: []
 pullRequest: null
 ---
+
+## Table of contents
 
 ## Introduction
 

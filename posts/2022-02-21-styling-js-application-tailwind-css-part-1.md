@@ -10,21 +10,7 @@ tags:
 pullRequest: 'https://github.com/samuelboland/Hyperfixations/pull/52'
 ---
 
-- [Introduction](#introduction)
-- [Interesting Tailwind Resources](#interesting-tailwind-resources)
-  - [Libraries of some sort](#libraries-of-some-sort)
-  - [Sandbox](#sandbox)
-  - [Vscode plugins](#vscode-plugins)
-  - [Tailwind Plugins](#tailwind-plugins)
-- [Dev Log](#dev-log)
-  - [Installing Tailwind and removing previous styling](#installing-tailwind-and-removing-previous-styling)
-  - [Installing DaisyUI](#installing-daisyui)
-    - [Testing Typography](#testing-typography)
-  - [Adjusting the Theme](#adjusting-the-theme)
-    - [First Attempt: Adding data-theme to `_app.js`: Fail](#first-attempt-adding-data-theme-to-_appjs-fail)
-    - [Second Attempt: Using Next-themes: Success](#second-attempt-using-next-themes-success)
-    - [Applying a theme Globally](#applying-a-theme-globally)
-- [Conclusion](#conclusion)
+## Table of contents
 
 ## Introduction
 

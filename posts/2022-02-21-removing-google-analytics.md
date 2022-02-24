@@ -8,6 +8,8 @@ tags: []
 pullRequest: null
 ---
 
+## Table of contents
+
 ## Quick Post on Privacy Page
 
 So it turns out that I need to implement a privacy policy, since I'm using Google Analytics. I'm going to implement a simple one by creating a new `/privacy` page, and linking to it from the footer that shows on all pages.

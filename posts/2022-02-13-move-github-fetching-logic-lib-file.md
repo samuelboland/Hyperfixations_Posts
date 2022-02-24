@@ -8,10 +8,7 @@ tags: []
 pullRequest: 'https://github.com/samuelboland/Hyperfixations/pull/34'
 ---
 
-- [Introduction](#introduction)
-- [Dev Log](#dev-log)
-  - [Replicating Original Behavior](#replicating-original-behavior)
-  - [Organizing my new github Api file](#organizing-my-new-github-api-file)
+## Table of contents
 
 ## Introduction
 

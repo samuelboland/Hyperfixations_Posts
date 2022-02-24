@@ -8,7 +8,7 @@ tags: []
 pullRequest: None
 ---
 
-- [My very first post](#my-very-first-post)
+## Table of contents
 
 ## My very first post
 

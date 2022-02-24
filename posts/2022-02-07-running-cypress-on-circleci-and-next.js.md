@@ -7,8 +7,7 @@ date: '2022-02-07T06:44:31.961Z'
 tags: []
 pullRequest: https://github.com/samuelboland/Hyperfixations/pull/16
 ---
-- [Introduction](#introduction)
-- [esmExternals](#esmexternals)
+## Table of contents
 
 ## Introduction
 

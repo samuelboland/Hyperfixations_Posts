@@ -7,8 +7,7 @@ date: '2022-02-09T06:45:37.480Z'
 tags: []
 pullRequest: None
 ---
-- [Introduction](#introduction)
-- [The Config](#the-config)
+## Table of contents
 
 ## Introduction
 

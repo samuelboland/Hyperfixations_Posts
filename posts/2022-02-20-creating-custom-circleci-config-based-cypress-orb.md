@@ -9,15 +9,7 @@ tags: []
 pullRequest: 'https://github.com/samuelboland/Hyperfixations/pull/46'
 ---
 
-- [Explanation](#explanation)
-  - [TL;DR](#tldr)
-- [Dev Log](#dev-log)
-  - [Extracting the Cypress/Install command](#extracting-the-cypressinstall-command)
-    - [Step-by-step](#step-by-step)
-  - [Extracting the Cypress/Run command](#extracting-the-cypressrun-command)
-    - [Step by step](#step-by-step-1)
-  - [Putting it all together](#putting-it-all-together)
-- [Conclusion](#conclusion)
+## Table of contents
 
 ## Explanation
 

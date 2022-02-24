@@ -8,17 +8,7 @@ tags: []
 pullRequest: https://github.com/samuelboland/Hyperfixations/pull/40
 ---
 
-- [Introduction](#introduction)
-- [Dev Log](#dev-log)
-  - [Search Posts for Images at build time and replace them with links to image on github](#search-posts-for-images-at-build-time-and-replace-them-with-links-to-image-on-github)
-  - [Use Nextjs Image component to display image](#use-nextjs-image-component-to-display-image)
-    - [Introducing the Nextjs Image Component](#introducing-the-nextjs-image-component)
-    - [Image size is a challenge](#image-size-is-a-challenge)
-    - [Using the Remark Ecosystem to render images in markdown in Nextjs](#using-the-remark-ecosystem-to-render-images-in-markdown-in-nextjs)
-    - [Replacing Markdown-it with remark and remark-html](#replacing-markdown-it-with-remark-and-remark-html)
-    - [Replacing dangerouslySetInnerHtml with ReactMarkdown](#replacing-dangerouslysetinnerhtml-with-reactmarkdown)
-- [Wrapping up](#wrapping-up)
-  - [Found a bug in testing](#found-a-bug-in-testing)
+## Table of contents
 
 ## Introduction
 

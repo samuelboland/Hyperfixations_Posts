@@ -8,12 +8,7 @@ tags: []
 pullRequest: None
 ---
 
-- [Introduction](#introduction)
-  - [Problem Statement](#problem-statement)
-  - [Writing Plan](#writing-plan)
-  - [Definitions](#definitions)
-- [Code Coverage Reports with Cypress in NextJS](#code-coverage-reports-with-cypress-in-nextjs)
-- [Conclusion](#conclusion)
+## Table of contents
 
 ## Introduction
 

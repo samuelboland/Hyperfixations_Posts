@@ -8,8 +8,7 @@ tags: []
 pullRequest: https://github.com/samuelboland/Hyperfixations/pull/42
 ---
 
-- [Explanation](#explanation)
-- [Dev Log](#dev-log)
+## Table of contents
 
 ## Explanation
 

@@ -8,13 +8,7 @@ tags: []
 pullRequest: https://github.com/samuelboland/Hyperfixations/pull/30
 ---
 
-- [Introduction](#introduction)
-- [Dev Log](#dev-log)
-  - [Figuring out how to do it](#figuring-out-how-to-do-it)
-  - [Doing It](#doing-it)
-    - [Storing my token](#storing-my-token)
-    - [Adding my key to my headers](#adding-my-key-to-my-headers)
-    - [Addendum: Adding the key to CircleCI](#addendum-adding-the-key-to-circleci)
+## Table of contents
 
 ## Introduction
 

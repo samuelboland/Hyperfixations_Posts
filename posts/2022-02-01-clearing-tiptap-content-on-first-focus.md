@@ -7,11 +7,7 @@ tags: ''
 slug: clearing-tiptap-content-focus
 pullRequest: None
 ---
-- [Introduction](#introduction)
-  - [How to determine whether an element is focused in React](#how-to-determine-whether-an-element-is-focused-in-react)
-  - [Keeping track of focus events with useState()](#keeping-track-of-focus-events-with-usestate)
-  - [Dealing with weird focusing issues on page load](#dealing-with-weird-focusing-issues-on-page-load)
-  - [Displaying text in the Tiptap content box on load](#displaying-text-in-the-tiptap-content-box-on-load)
+## Table of contents
 
 ## Introduction
 

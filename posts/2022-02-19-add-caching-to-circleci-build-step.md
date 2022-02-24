@@ -9,16 +9,7 @@ categories: []
 pullRequest: https://github.com/samuelboland/Hyperfixations/pull/45
 ---
 
-- [Explanation](#explanation)
-- [Dev Log](#dev-log)
-  - [Refactoring CircleCI Config](#refactoring-circleci-config)
-  - [Wait, let's go another direction](#wait-lets-go-another-direction)
-    - [Breaking down the CircleCI Orb, starting with the Jobs](#breaking-down-the-circleci-orb-starting-with-the-jobs)
-    - [Finding the `install` command](#finding-the-install-command)
-    - [Breaking down the `setup` job](#breaking-down-the-setup-job)
-    - [Adding it as a post-step](#adding-it-as-a-post-step)
-  - [Figuring out why `.next/cache` is not present in circleCI](#figuring-out-why-nextcache-is-not-present-in-circleci)
-- [Conclusion](#conclusion)
+## Table of contents
 
 ## Explanation
 
